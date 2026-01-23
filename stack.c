@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:22:10 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/23 11:51:42 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/23 18:30:48 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_node	*create_node(int value)
 {
 	t_node	*node;
 
-	node = malloc(size_of (t_node));
+	node = malloc(size_of(t_node));
 	if (!node)
 		return (NULL);
 	node->value = value;
