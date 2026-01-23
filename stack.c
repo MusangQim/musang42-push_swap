@@ -6,17 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:22:10 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/22 21:53:16 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/23 11:51:42 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* buat node
- * -allocate memory
- *  -isi value
- *  -next = NULL
- */
+/* buat node -allocate memory -isi value -next = NULL */
 t_node	*create_node(int value)
 {
 	t_node	*node;
@@ -29,23 +25,16 @@ t_node	*create_node(int value)
 	return (node);
 }
 
-/* add element kat atas stack */
+/* add node baru atas node lama */
 void	stack_push(t_node **stack, t_node *new)
 {
 	if (!new)
 		return ;
 	new->next = *stack;
 	*stack = new;
-	/* or can be:
-	 * if (!*stack)
-	 * {
-	 * 	*stack = new;
-	 * 	return ;
-	 * }
-	 */
 }
 
-/* return no of element dalam stack */
+/* count berapa banyak node dalam stack */
 int	stack_size(t_node *stack)
 {
 	int	count;
