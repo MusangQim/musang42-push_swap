@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 12:17:22 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/23 18:48:45 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:11:59 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,4 +62,21 @@ int	is_sorted(t_node *stack)
 		current = current->next;
 	}
 	return (1);
+}
+
+int	position(t_node *stack, int value)
+{
+	t_node		*current;
+	int			index;
+
+	current = stack;
+	index = 0;
+	while (current)
+	{
+		if (current->value == value)
+			return (index);
+		current = current->next;
+		index++;
+	}
+	return (-1);
 }
