@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 18:16:29 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/25 23:02:01 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/25 23:07:30 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	parse_args(argc, **argv, &stack_a)
 {
-	t_stack		*new_node;
 	char	**numbers;
 	int		value;
 	int		i;
@@ -27,7 +26,7 @@ void	parse_args(argc, **argv, &stack_a)
 	while (numbers[i])
 	{
 		value = ft_atoi(numbers[i]);
-		new_node = create_node(value);
+		t_stack	*new_node = create_node(value);
 		stack_push(stack_a, new_node);
 		i++;
 	}
