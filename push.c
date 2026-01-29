@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 23:59:33 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/29 12:47:15 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:53:12 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push_process(t_node **src, t_node **dest)
 {
 	t_node	tmp;
 
-	if (!= src)
+	if (!*src)
 		return ;
 	tmp = *src;
 	*src = (*src)->next;
@@ -26,10 +26,10 @@ void	push_process(t_node **src, t_node **dest)
 
 void	push_a(t_node **stack_a, t_node **stack_b)
 {
-	push_process(stack_a, stack_b);
+	push_process(stack_b, stack_a);
 }
 
 void	push_b(t_node **stack_a, t_node **stack_b)
 {
-	push_process(stack_b, stack_a);
+	push_process(stack_a, stack_b);
 }
