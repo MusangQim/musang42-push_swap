@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 13:49:15 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/29 14:21:12 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/29 14:27:40 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,19 @@
 
 void	swap_process(t_node **stack)
 {
-	t_node	tmp;
+	t_node	*tmp;
 
-	if (**stack < 2)
+	if (!*stack || !(*stack)->next)
 		return ;
-	tmp = *stack
-
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tmp->next = (*stack)->next;
+	(*stack)->next = tmp;
 }
 
 void	swap_a(t_node **stack_a)
 {
-
+	swap_process(stack_a);
 }
 
 void	swap_b(t_node **stack_b)
