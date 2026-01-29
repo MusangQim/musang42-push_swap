@@ -6,20 +6,29 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 23:59:33 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/27 00:00:52 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/29 12:41:37 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	pa(t_stack **a, t_stack **b)
+void	push_process(t_node **src, t_node **dest)
 {
-	t_stack	*tmp;
+	t_node	tmp;
 
-	if (!b || !*b)
+	if (!= src)
 		return ;
+	tmp = *src;
+	*src = (*src)->next;
+	tmp->next = *dest;
+	*dest = tmp;
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	push_a
+{
+	push_process(stack
+}
+
+void	push_b
 {
 }
