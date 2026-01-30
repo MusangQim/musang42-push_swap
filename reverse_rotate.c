@@ -6,13 +6,13 @@
 /*   By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 22:54:46 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/29 23:30:21 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:23:54 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate_process(t_node **stack)
+void	revrotate_process(t_node **stack)
 {
 	t_node	*tmp;
 	t_node	*last;
@@ -25,14 +25,18 @@ void	reverse_rotate_process(t_node **stack)
 	last->next = tmp;
 }
 
-void	reverse_a(t_node **stack_a)
+void	revrotate_a(t_node **stack_a)
 {
+	revrotate_process(stack_a);
 }
 
-void	reverse_b(t_node **stack_b)
+void	revrotate_b(t_node **stack_b)
 {
+	revrotate_process(stack_b);
 }
 
-void	reverse_r(t_node **stack_a, t_node **stack_b)
+void	revrotate_r(t_node **stack_a, t_node **stack_b)
 {
+	revrotate_process(stack_a);
+	revrotate_process(stack_b);
 }
