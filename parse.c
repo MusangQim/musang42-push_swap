@@ -6,13 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 18:16:29 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/30 18:51:47 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/30 19:36:06 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_split(char **split)
+static void	free_split(char **split)
 {
 	int	i;
 
@@ -34,6 +34,10 @@ void	parse_args(int argc, char **argv, t_stack **stack_a)
 	i = 0;
 	while (numbers[i])
 	{
+		if (!is_validnum(numbers[i]))
+			error_exit("Error\n");
+		value = ft_atoi(numbers[i]);
+		push_stack(stack_a, create_node(value));
 		i++;
 	}
 	if (argc == 2)
