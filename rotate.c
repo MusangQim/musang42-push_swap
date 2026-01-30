@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 22:43:17 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/30 11:10:35 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:11:02 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ void	rotate_r(t_node **stack_a, t_node **stack_b)
 {
 	rotate_process(stack_a);
 	rotate_process(stack_b);
-	ft_putstr("rr\n")
+	ft_putstr("rr\n");
 }
