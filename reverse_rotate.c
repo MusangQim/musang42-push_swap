@@ -6,7 +6,7 @@
 /*   By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/29 22:54:46 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/30 11:42:27 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/30 11:49:17 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,18 @@ void	revrotate_process(t_node **stack)
 void	revrotate_a(t_node **stack_a)
 {
 	revrotate_process(stack_a);
+	ft_putstr("rra\n");
 }
 
 void	revrotate_b(t_node **stack_b)
 {
 	revrotate_process(stack_b);
+	ft_putstr("rrb\n");
 }
 
 void	revrotate_r(t_node **stack_a, t_node **stack_b)
 {
 	revrotate_process(stack_a);
 	revrotate_process(stack_b);
+	ft_putstr("rrr\n");
 }
