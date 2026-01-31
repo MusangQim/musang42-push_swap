@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/31 21:28:53 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/01/31 21:36:18 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,20 @@ static void	check_invalidchar(char *str)
 
 static void	check_sign(char *str)
 {
+	int	j;
 
+	j = 0;
+	if (str[j] == '+' || str[j] == '-')
+		j++;
+	while (str[j] != '\0')
+	{
+		if (str[j] == '+' || str[j] == '-')
+		{
+			ft_putstr("Error\n");
+			exit(1);
+		}
+		j++;
+	}
 }
 
 static void	check_overflow(char *str)
