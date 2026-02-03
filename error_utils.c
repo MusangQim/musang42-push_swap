@@ -6,13 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 18:55:03 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/03 19:03:48 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/03 19:04:48 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	help_noverflow(long num, int digit, int sign)
+int	help_overflow(long num, int digit, int sign)
 {
 	if (sign == +1)
 	{
