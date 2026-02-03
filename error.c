@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/31 21:36:18 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/03 18:54:17 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	check_sign(char *str)
 	}
 }
 
-static void	check_overflow(char *str)
+static int	check_overflow(char *str)
 {
 }
 
