@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/03 18:55:03 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/03 19:04:48 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/03 19:09:43 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ int	help_overflow(long num, int digit, int sign)
 	num = num * 10 + digit;
 	return (num);
 }
-
