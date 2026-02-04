@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/04 22:16:05 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:19:04 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,19 @@ static void	check_duplicate(t_node *stack)
 {
 	t_node	*current;
 	t_node *runner;
+
+	current = stack;
+	while(current != NULL)
+	{
+		runner = current->next;
+		if (current->value == runner->value)
+		{
+			ft_putstr("Error\n");
+			exit(1);
+		}
+		runner = runner->next;
+
+
 }
 
 void	check_errors(char **argv)
