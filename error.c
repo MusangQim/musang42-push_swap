@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/04 22:19:04 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:20:00 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,8 @@ static void	check_duplicate(t_node *stack)
 			exit(1);
 		}
 		runner = runner->next;
-
+	}
+	current = current->next;
 
 }
 
