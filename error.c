@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/04 22:21:19 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:37:51 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,10 @@ static int	check_overflow(char *str)
 static void	check_duplicate(t_node *stack)
 {
 	t_node	*current;
-	t_node *runner;
+	t_node	*runner;
 
 	current = stack;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		runner = current->next;
 		while (runner != NULL)
@@ -96,9 +96,10 @@ static void	check_duplicate(t_node *stack)
 	}
 }
 
-void	check_errors(char **argv)
+void	check_errors(char **argv, t_node **stack_a)
 {
 	int	i;
+	int	value;
 
 	i = 1;
 	while (argv[i])
@@ -106,7 +107,9 @@ void	check_errors(char **argv)
 		check_invalidchar(argv[i]);
 		check_sign(argv[i]);
 		check_overflow(argv[i]);
+		value = ft_atoi(argv[i]);
+		stack_push(stack_a, create_node(value));
 		i++;
 	}
-	check_duplicate(argv);
+	check_duplicate(*stack_a);
 }
