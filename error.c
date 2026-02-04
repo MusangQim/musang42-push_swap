@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/03 19:09:26 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/04 22:16:05 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,8 +74,10 @@ static int	check_overflow(char *str)
 	return ((int)(num * sign));
 }
 
-static void	check_duplicate(char **argv)
+static void	check_duplicate(t_node *stack)
 {
+	t_node	*current;
+	t_node *runner;
 }
 
 void	check_errors(char **argv)
