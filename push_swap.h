@@ -6,12 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/22 21:31:40 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/07 20:26:57 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 typedef struct s_node
 {
 	int			value;
-	struct s_node	*next;
+	int			index;
+	struct s_node		*next;
 }	t_node;
