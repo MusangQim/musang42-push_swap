@@ -6,12 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 13:11:23 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/07 21:48:42 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:54:14 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/* function for find minimum index in stack, node by node */
 static	void	find_min_unindex(t_node *stack)
 {
 	t_node	*cursor;
@@ -29,7 +30,18 @@ static	void	find_min_unindex(t_node *stack)
 	return (min_node);
 }
 
+/* function for declare index in each of node */
 void	assign_index(t_node *stack)
 {
-}
+	t_node	*node;
+	int		index;
 
+	index = 0;
+	node = find_min_unindex(stack);
+	while (node != NULL)
+	{
+		node->index = index;
+		index++;
+		node = find_min_unindex(stack);
+	}
+}
