@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:22:10 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/23 18:30:48 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/07 20:28:42 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_node	*create_node(int value)
 	if (!node)
 		return (NULL);
 	node->value = value;
+	node->index = -1;
 	node->next = NULL;
 	return (node);
 }
