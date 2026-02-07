@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 13:11:23 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/07 21:16:18 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/07 21:48:42 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,19 @@
 
 static	void	find_min_unindex(t_node *stack)
 {
+	t_node	*cursor;
+	t_node	*min_node;
+
+	min_node = NULL;
+	cursor = stack;
+	while (cursor != NULL)
+	{
+		if (cursor->index == -1)
+			if (min_node == NULL || cursor->value < min_node->value)
+				min_node = cursor;
+		cursor = cursor->next;
+	}
+	return (min_node);
 }
 
 void	assign_index(t_node *stack)
