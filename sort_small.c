@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/09 20:44:18 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/09 23:24:06 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 int	sort_2(t_node **stack_a)
 {
-	t_node	*node;
 	int	sort;
 
 	sort = is_sorted(stack_a);
 	if (sort)
 		return (0);
-	if node
+	if ((*stack_a)->value > (*stack_a)->next->value
 		swap_a(stack_a);
 }
 
