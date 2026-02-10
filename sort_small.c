@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/10 21:38:36 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/10 21:46:17 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 
 void	sort_2(t_node **stack_a)
 {
-	int	sort;
-
-	sort = is_sorted(*stack_a);
-	if (sort)
-		return ;
 	if ((*stack_a)->value > (*stack_a)->next->value)
 		swap_a(stack_a);
 }
@@ -26,11 +21,7 @@ void	sort_2(t_node **stack_a)
 void	sort_3(t_node **stack_a)
 {
 	int	node_max;
-	int	sort;
 
-	sort = is_sorted(*stack_a);
-	if (sort)
-		return ;
 	node_max = max(*stack_a);
 	if (node_max == (*stack_a)->value)
 		rotate_a(stack_a);
@@ -43,38 +34,10 @@ void	sort_3(t_node **stack_a)
 void	sort_4(t_node **stack_a)
 {
 	int			node_min;
-	int			sort;
 	int			size;
 	t_node		*stack_b;
 
 	stack_b = NULL;
-	while(stack_size(*stack_a) > 3)
-	{
-		node_min = min(*stack_a);
-		size = stack_size(*stack_a);
-		if (node_min == (*stack_a)->value)
-			push_b(stack_a, &stack_b);
-		else if (position(*stack_a, node_min) <= size / 2)
-			rotate_a(stack_a);
-		else
-			revrotate_a(stack_a);
-	}
-	sort_3(stack_a);
-	push_a(stack_a, &stack_b);
-}
-
-
-void	sort_5(t_node **stack_a)
-{
-	int			node_min;
-	int			sort;
-	int			size;
-	t_node		*stack_b;
-
-	stack_b = NULL;
-	sort = is_sorted(stack_a);
-	if (sort)
-		return ;
 	while (stack_size(*stack_a) > 3)
 	{
 		node_min = min(*stack_a);
@@ -87,16 +50,42 @@ void	sort_5(t_node **stack_a)
 			revrotate_a(stack_a);
 	}
 	sort_3(stack_a);
-	if (stack_b->value > stack_b->next->value)
+	push_a(stack_a, &stack_b);
+}
+
+void	sort_5(t_node **stack_a)
+{
+	int			node_min;
+	int			size;
+	t_node		*stack_b;
+
+	stack_b = NULL;
+	while (stack_size(*stack_a) > 3)
+	{
+		node_min = min(*stack_a);
+		size = stack_size(*stack_a);
+		if (node_min == (*stack_a)->value)
+			push_b(stack_a, &stack_b);
+		else if (position(*stack_a, node_min) <= size / 2)
+			rotate_a(stack_a);
+		else
+			revrotate_a(stack_a);
+	}
+	sort_3(stack_a);
+	if (stack_b && stack_b->next && stack_b->value > stack_b->next->value)
 		swap_b(&stack_b);
 	push_a(stack_a, &stack_b);
 	push_a(stack_a, &stack_b);
 }
 
-int	sort_small(t_node **stack_a)
+void	sort_small(t_node **stack_a)
 {
+	int	sort;
 	int	size;
 
+	sort  = is_sorted(*stack_a);
+	if (sort)
+		return ;
 	size = stack_size(*stack_a);
 	if (size == 2)
 		sort_2(stack_a);
