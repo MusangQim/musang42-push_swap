@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/10 20:29:34 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/10 20:42:34 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,27 @@ void	sort_3(t_node **stack_a)
 		swap_a(stack_a);
 }
 
-int	sort_5(t_node **stack_a)
+void	sort_5(t_node **stack_a)
 {
 	int	node_min;
 	int	sort;
+	int	size;
+	t_node		*stack_b;
 
+	stack_b = NULL;
 	sort = is_sorted(stack_a);
 	if (sort)
 		return ;
+	size = stack_size(*stack_a);
 	node_min = min(*stack_a);
-	while (stack_a)
+	while (size > 3)
 	{
 		if (node_min == (*stack_a)->value)
 			push_b(stack_b);
-		if (node_min == (*stack_a)->next->value)
+		else if (node_min <= size/2)
+			rotate_a(stack_a);
+		else if (node_min > size/2)
+			revrotate_a(stack_a);
 
 
 }
