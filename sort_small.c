@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/10 11:59:24 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/10 17:32:53 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,8 @@ void	sort_2(t_node **stack_a)
 
 void	sort_3(t_node **stack_a)
 {
-	int	sort;
-	int	node_max;
-	int	node_min;
+	t_node		node_max;
+	int			sort;
 
 	sort = is_sorted(stack_a);
 	if (sort)
