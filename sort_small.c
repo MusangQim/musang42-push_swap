@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/10 19:38:54 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/10 20:29:34 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	sort_5(t_node **stack_a)
 	{
 		if (node_min == (*stack_a)->value)
 			push_b(stack_b);
-		if
+		if (node_min == (*stack_a)->next->value)
+
 
 }
 
