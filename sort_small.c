@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/10 21:10:01 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/10 21:23:13 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,14 @@ void	sort_5(t_node **stack_a)
 
 int	sort_small(t_node **stack_a)
 {
+	int	size;
+
+	size = stack_size(*stack_a);
+	if (size == 2)
+		sort_2(stack_a);
+	else if (size == 3)
+		sort_3(stack_a);
+	else if (size == 5)
+		sort_5(stack_a);
+
 }
