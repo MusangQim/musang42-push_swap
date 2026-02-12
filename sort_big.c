@@ -6,28 +6,32 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/12 20:50:14 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/12 23:17:11 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-push_chunks()
+void	push_chunk(t_node **stack_a, t_node **stack_b, int size)
 {
 }
 
-push_back()
+void	push_back(t_node **stack_a, t_node **stack_b)
 {
 }
 
-max_position()
+void	max_position()
 {
 }
 
-move_top()
+void	move_top()
 {
 }
 
-sort_big()
+void	sort_big(t_node **stack_a, t_node **stack_b)
 {
+	int	chunk_size;
+
+	push_chunk(stack_a, stack_b, chunk_size);
+	push_back(stack_a, stack_b);
 }
