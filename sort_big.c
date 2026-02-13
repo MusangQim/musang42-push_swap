@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/12 23:27:34 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/13 18:13:52 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	push_chunk(t_node **stack_a, t_node **stack_b, int size)
 {
+	int	element;
+	while (
 }
 
 void	push_back(t_node **stack_a, t_node **stack_b)
@@ -30,7 +32,7 @@ void	move_top()
 
 void	sort_big(t_node **stack_a, t_node **stack_b)
 {
-	int	chunk_size;
+	int	size;
 
 	push_chunk(stack_a, stack_b, chunk_size);
 	push_back(stack_a, stack_b);
