@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/15 21:23:07 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/15 21:35:06 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	find_target_position(t_node **stack_a, int element_index)
 		target_node = NULL;
 		position = stack_size(stack_a);
 	}
-	return (position, target_node);
+	return (position);
 }
 
 void	get_max_index(t_node *stack)
