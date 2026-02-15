@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/15 21:35:06 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/15 21:37:57 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,21 +23,22 @@ void	push_to_a()
 int	find_target_position(t_node **stack_a, int element_index)
 {
 	int			position;
-	t_node		current;
-	t_node		target_node;
+	t_node		*current;
+	t_node		*target_node;
 
 	position = 0;
 	current = *stack_a;
 	while (current)
 	{
-		if (element < current->node->index)
+		if (element < current->index)
 		{
 			target_node = current;
 			break;
 		}
+		current = current->next;
 		position++;
 	}
-	if (element_index > current->node)
+	if (element_index > max(stack_a))
 	{
 		target_node = NULL;
 		position = stack_size(stack_a);
