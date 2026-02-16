@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/15 21:49:32 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/16 16:01:31 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,44 @@ int	find_target_position(t_node **stack_a, t_node **target_node, int element_ind
 	return (position);
 }
 
-void	get_max_index(t_node *stack)
+void	calculate_cost(t_node **stack_a, t_node **stack_b)
 {
+	int	moves_a;
+	int	moves_b;
+	int	pos_in_a;
+	int	pos_in_b;
+	int	direction_a;
+	int	direction_b;
+	int	total_cost;
+
+	pos_in_a = find_target_position(stack_a, &target_node, stack_b->index);
+	pos_in_b = position(stack_b, stack_b->node);
+	if (pos_in_a <= stack_size(stack_a) / 2)
+	{
+		direction_a = rotate_a(stack_a);
+		moves_a = pos_in_a;
+	}
+	else
+	{
+		direction_a = revrotate_a(stack_a);
+		moves_a = stack_size(stack_a) - pos_in_a;
+	}
+	if (pos_in_b <= stack_size(stack_b) / 2)
+	{
+		direction_b = rotate_b(stack_b);
+		moves_b = pos_in_b;
+	}
+	else
+	{
+		direction_b = revrotate_b(stack_b);
+		moves_b = stack_size(stack_b) - pos_in_b;
+	}
+	if (direction_a == direction_b)
+		total_cost = max(moves_a, moves_b);
+	else
+		total_cost = moves_a + moves_b;			
 }
+
 
 void	sort_big(t_node **stack_a, t_node **stack_b)
 {
