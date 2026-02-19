@@ -6,11 +6,29 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/19 16:06:41 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/19 16:35:57 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	push_chunks(t_node **stack_a, t_node **stack_b, int chunksize)
+{
+	int	totalsize;
+	int	currentlimit;
+
+	totalsize = stack_size(*stack_a);
+	chunksize = totalsize / 5;
+	currentlimit = chunksize;
+	while (*stack_a != NULL)
+	{
+		if ((*stack_a)->index <= currentlimit)
+			push_b(*stack_a, *stack_b);
+		else
+			rotate_a(stack_a);
+		currentlimit += chunksize;
+	}
+}
 
 int	find_max_index(t_node *stack)
 {
@@ -35,7 +53,7 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 	int	pos;
 	int	size;
 	int	max_index;
-	
+
 	while (*stack_b != NULL)
 	{
 		size = stack_size(*stack_b);
@@ -53,5 +71,7 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 
 void	sort_big(t_node **stack_a, t_node **stack_b)
 {
-
+	assign_index(*stack_a);
+	push_chunks(*stack_a, *stack_b);
+	rebuild_stack(*stack_a, *stack_b);
 }
