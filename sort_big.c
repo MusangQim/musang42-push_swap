@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/19 16:01:53 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/19 16:06:41 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,31 +49,6 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 				revrotate(stack_b);
 		push_a(stack_a, stack_b);
 	}
-}
-
-int	find_target_position(t_node **stack_a, t_node **target_node, int element_index)
-{
-	int			position;
-	t_node		*current;
-
-	position = 0;
-	current = *stack_a;
-	while (current)
-	{
-		if (element_index < current->index)
-		{
-			*target_node = current;
-			break;
-		}
-		current = current->next;
-		position++;
-	}
-	if (element_index > max(*stack_a))
-	{
-		*target_node = NULL;
-		position = stack_size(stack_a);
-	}
-	return (position);
 }
 
 void	sort_big(t_node **stack_a, t_node **stack_b)
