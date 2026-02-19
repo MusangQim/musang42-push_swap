@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/19 16:35:57 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/19 16:56:40 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,23 @@
 
 void	push_chunks(t_node **stack_a, t_node **stack_b, int chunksize)
 {
-	int	totalsize;
+	int	pushed;
 	int	currentlimit;
 
-	totalsize = stack_size(*stack_a);
-	chunksize = totalsize / 5;
+	pushed = 0;
+	chunksize = stack_size(*stack_a) / 5;
 	currentlimit = chunksize;
 	while (*stack_a != NULL)
 	{
 		if ((*stack_a)->index <= currentlimit)
-			push_b(*stack_a, *stack_b);
+		{
+			push_b(stack_a, stack_b);
+			pushed++;
+		}
 		else
 			rotate_a(stack_a);
-		currentlimit += chunksize;
+		if (pushed == currentlimit)
+			currentlimit += chunksize;
 	}
 }
 
