@@ -6,20 +6,37 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/18 13:13:13 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/19 15:51:17 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	find_max_index(t_node *stack)
+{
+	t_node		*current;
+	int			max_index;
+
+	if (!stack)
+		return (0);
+	max_index = stack->index;
+	current = stack;
+	while (current)
+	{
+		if (current->index > max_index)
+			max_index = current->index;
+		current = current->next;
+	}
+	return (max_index);
+}
 
 void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 {
 	int	pos;
 	int	size;
 	int	max_index;
-	t_node	index_b;
 
-	index_b = assign_index(stack_b);
+	
 	while (stack_b != NULL)
 	{
 		size = stack_size(*stack_b);
