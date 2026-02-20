@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/20 11:19:03 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/20 15:42:14 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,6 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 void	sort_big(t_node **stack_a, t_node **stack_b)
 {
 	assign_index(*stack_a);
-	push_chunks(*stack_a, *stack_b);
-	rebuild_stack(*stack_a, *stack_b);
+	push_chunks(stack_a, stack_b);
+	rebuild_stack(stack_a, stack_b);
 }
