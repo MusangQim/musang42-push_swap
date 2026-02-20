@@ -6,20 +6,23 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/20 11:15:08 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/20 11:19:03 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_chunks(t_node **stack_a, t_node **stack_b, int chunksize)
+void	push_chunks(t_node **stack_a, t_node **stack_b)
 {
 	int	push_in;
+	int	chunk_size
 	int	currentlimit;
 
 	push_in = 0;
-	chunksize = stack_size(*stack_a) / 5;
-	currentlimit = chunksize;
+	chunk_size = stack_size(*stack_a) / 5;
+	if (chunk_size == 0)
+		chunk_size = 1;
+	currentlimit = chunk_size;
 	while (*stack_a != NULL)
 	{
 		if ((*stack_a)->index <= currentlimit)
@@ -29,9 +32,9 @@ void	push_chunks(t_node **stack_a, t_node **stack_b, int chunksize)
 		}
 		else
 			rotate_a(stack_a);
-		if (push_in == chunksize)
+		if (push_in == chunk_size)
 		{
-			currentlimit += chunksize;
+			currentlimit += chunk_size;
 			push_in = 0;
 		}
 	}
