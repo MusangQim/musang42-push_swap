@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/21 14:42:26 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:44:04 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
