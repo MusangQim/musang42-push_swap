@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 18:16:29 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/30 19:36:06 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/21 11:02:38 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	free_split(char **split)
 	free(split);
 }
 
-void	parse_args(int argc, char **argv, t_stack **stack_a)
+void	parse_args(int argc, char **argv, t_node **stack_a)
 {
 	char	**numbers;
 	int		i;
