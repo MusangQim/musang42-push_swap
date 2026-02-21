@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/21 14:39:43 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/21 14:41:55 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/21 15:19:32 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,4 @@
 
 int	ft_putstr(char *s)
 {
-	int	i;
-
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-	{
-		write (1, &s[i], 1);
-		i++;
-	}
-	return (i);
 }
