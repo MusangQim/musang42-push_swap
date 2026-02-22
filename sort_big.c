@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/20 15:42:14 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/22 23:59:45 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	push_chunks(t_node **stack_a, t_node **stack_b)
 {
 	int	push_in;
-	int	chunk_size
+	int	chunk_size;
 	int	currentlimit;
 
 	push_in = 0;
