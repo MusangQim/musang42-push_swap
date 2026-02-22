@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 23:45:21 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/22 23:48:01 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/22 23:50:29 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,12 @@ int	main(intargc, char **argv)
 		free_stack(stack_a);
 		return (0);
 	}
-
+	assign_index(stack_a);
+	if (stack_size(stack_a) < 5)
+		sort_small(stack_a);
+	else
+		sort_big(stack_a, stack_b);
+	free_stack(stack_a);
+	free_stack(stack_b);
+	return (0);
+}
