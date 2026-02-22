@@ -6,13 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 23:45:21 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/22 23:50:29 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/23 00:03:04 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(intargc, char **argv)
+int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
