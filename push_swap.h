@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/24 16:00:53 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:13:35 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	check_errors(char **argv, t_node **stack_a);
 
 /* ERROR UTILS */
 int		help_overflow(long num, int digit, int sign);
+void	error_exit(t_node **stack);
 
 /* INDEX */
 void	assign_index(t_node *stack);
