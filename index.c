@@ -6,14 +6,14 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/05 13:11:23 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/07 21:54:14 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:28:54 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* function for find minimum index in stack, node by node */
-static	void	find_min_unindex(t_node *stack)
+static	t_node	find_min_unindex(t_node *stack)
 {
 	t_node	*cursor;
 	t_node	*min_node;
