@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/26 23:59:33 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/01/29 13:08:58 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:34:44 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	push_process(t_node **src, t_node **dest)
 {
-	t_node	tmp;
+	t_node	*tmp;
 
 	if (!*src)
 		return ;
