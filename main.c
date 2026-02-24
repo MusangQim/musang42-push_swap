@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 23:45:21 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/24 15:53:50 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 15:57:42 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,18 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	if (argc < 2)
 		return (0);
-	parse_args(argc, argv, *stack_a);
+	parse_args(argc, argv, &stack_a);
 	if (is_sorted(stack_a))
 	{
-		free_stack(stack_a);
+		free_stack(&stack_a);
 		return (0);
 	}
 	assign_index(stack_a);
 	if (stack_size(stack_a) < 5)
-		sort_small(*stack_a);
+		sort_small(&stack_a);
 	else
-		sort_big(*stack_a, *stack_b);
-	free_stack(stack_a);
-	free_stack(stack_b);
+		sort_big(&stack_a, &stack_b);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
