@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/21 15:44:04 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 15:53:01 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,6 @@ int		find_max_index(t_node *stack);
 void	rebuild_stack(t_node **stack_a, t_node **stack_b);
 
 /* UTILS */
-int	ft_putstr(char *s);
+void	free_stack(t_node **stack);
 
 #endif
