@@ -6,7 +6,7 @@
 #    By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/23 00:15:04 by adzmusta          #+#    #+#              #
-#    Updated: 2026/02/23 15:10:32 by adzmusta         ###   ########.fr        #
+#    Updated: 2026/02/24 15:44:29 by adzmusta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,17 +31,27 @@ SRCS = main.c \
 
 OBJS = $(SRCS:.c=.o)
 
+LIBFT_DIR = libft
+LIBFT = $(LIBFT_DIR)/libft.a
+
+PRINTF_DIR = ft_printf
+PRINTF = $(PRINTF_DIR)/libftprintf.a
+
 all = $(NAME)
 
 $(NAME): $(OBJS)
-
-%.o: %.c
-	$(CC) 
+	@make -C $(LIBFT_DIR)
+	@make -C $(PRINTF_DIR)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(PRINTF) -o $(NAME)
 
 clean:
+	@make clean -C $(LIBFT_DIR)
+	@make clean -C $(PRINTF_DIR)
 	rm -f $(OBJS)
 
 fclean: clean
+	@make fclean -C $(LIBFT_DIR)
+	@make fclean -C $(PRINFT_DIR)
 	rm -f $(NAME)
 
 re: fclean all
