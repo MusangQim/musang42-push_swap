@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/22 23:59:45 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:31:23 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 				rotate_b(stack_b);
 		else
 			while ((*stack_b)->index != max_index)
-				revrotate(stack_b);
+				revrotate_b(stack_b);
 		push_a(stack_a, stack_b);
 	}
 }
