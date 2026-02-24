@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 18:16:29 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/23 00:01:25 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:11:00 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,12 @@ static void	free_split(char **split)
 void	parse_args(int argc, char **argv, t_node **stack_a)
 {
 	char	**numbers;
-	int		i;
 
 	if (argc == 2)
 		numbers = ft_split(argv[1], ' ');
 	else
 		numbers = &argv[1];
-	i = 0;
-	while (numbers[i])
-	{
-		if (!is_validnum(numbers[i]))
-			error_exit(stack_a);
-		value = ft_atoi(numbers[i]);
-		push_stack(stack_a, create_node(value));
-		i++;
-	}
+	check_errors(numbers, stack_a);
 	if (argc == 2)
 		free_split(numbers);
 }
