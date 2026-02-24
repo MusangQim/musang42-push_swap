@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/04 22:37:51 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/24 16:16:50 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ static void	check_sign(char *str)
 
 static int	check_overflow(char *str)
 {
-	long	number;
+	long	num;
 	int		i;
 	int		sign;
 	int		digit;
