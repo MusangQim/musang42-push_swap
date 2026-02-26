@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:22:10 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/24 16:22:42 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/26 23:55:11 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,19 @@ t_node	*create_node(int value)
 
 void	stack_push(t_node **stack, t_node *new)
 {
-	if (!new)
+	t_node	*temp;
+
+	if (!stack || !new)
 		return ;
-	new->next = *stack;
-	*stack = new;
+	if (!*stack)
+	{
+		*stack = new;
+		return ;
+	}
+	temp = *stack;
+	while (temp->next)
+		temp = temp->next;
+	temp->next = new;
 }
 
 int	stack_size(t_node *stack)
