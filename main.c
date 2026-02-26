@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 23:45:21 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/26 23:23:56 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/26 23:25:21 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,10 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	assign_index(stack_a);
-	if (!is_sorted(stack_a))
-	{
-		if (stack_size(stack_a) <= 5)
-			sort_small(&stack_a);
-		else
-			sort_big(&stack_a, &stack_b);
-	}
+	if (stack_size(stack_a) <= 5)
+		sort_small(&stack_a);
+	else
+		sort_big(&stack_a, &stack_b);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);
