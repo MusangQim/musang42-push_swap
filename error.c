@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/24 16:16:50 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/27 23:20:29 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void	check_errors(char **argv, t_node **stack_a)
 	int	i;
 	int	value;
 
-	i = 1;
+	i = 0;
 	while (argv[i])
 	{
 		check_invalidchar(argv[i]);
