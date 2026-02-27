@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/27 22:58:42 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/02/27 23:03:15 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ void	sort_2(t_node **stack_a)
 /* sorting 3 node */
 void	sort_3(t_node **stack_a)
 {
-	ft_printf("sort_3 called! values: %d %d %d\n",
-			(*stack_a)->value,
-			(*stack_a)->next->value,
-			(*stack_a)->next->next->value);
 	int	node_max;
 
 	node_max = max(*stack_a);
