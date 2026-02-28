@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 12:17:22 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/01 07:18:31 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/01 07:23:05 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	position(t_node *stack, int value)
 	return (-1);
 }
 
-int	position_by_index(t_node **stack, int indexvalue)
+int	position_by_index(t_node *stack, int indexvalue)
 {
 	t_node		*current;
 	int			pos;
