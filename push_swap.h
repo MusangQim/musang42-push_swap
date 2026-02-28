@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/24 16:19:34 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/01 07:24:53 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		min(t_node *stack);
 int		max(t_node *stack);
 int		is_sorted(t_node *stack);
 int		position(t_node *stack, int value);
+int		position_by_index(t_node *stack, int indexvalue);
 
 /* PARSE */
 void	parse_args(int argc, char **argv, t_node **stack_a);
