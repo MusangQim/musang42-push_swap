@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/28 01:27:37 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/01 07:19:28 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 	{
 		size = stack_size(*stack_b);
 		max_index = find_max_index(*stack_b);
-		pos = position(*stack_b, max_index);
+		pos = position_by_index(*stack_b, max_index);
 		if (pos <= size / 2)
 			while ((*stack_b)->index != max_index)
 				rotate_b(stack_b);
