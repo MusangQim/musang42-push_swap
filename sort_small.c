@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:21:28 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/27 23:03:15 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/01 22:45:28 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	sort_5(t_node **stack_a)
 			revrotate_a(stack_a);
 	}
 	sort_3(stack_a);
-	if (stack_b && stack_b->next && stack_b->value > stack_b->next->value)
+	if (stack_b->value < stack_b->next->value)
 		swap_b(&stack_b);
 	push_a(stack_a, &stack_b);
 	push_a(stack_a, &stack_b);
