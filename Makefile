@@ -6,7 +6,7 @@
 #    By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/23 00:15:04 by adzmusta          #+#    #+#              #
-#    Updated: 2026/02/24 16:38:22 by adzmusta         ###   ########.fr        #
+#    Updated: 2026/03/03 11:14:49 by adzmusta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ clean:
 
 fclean: clean
 	@make fclean -C $(LIBFT_DIR)
-	@make fclean -C $(PRINFT_DIR)
+	@make fclean -C $(PRINTF_DIR)
 	rm -f $(NAME)
 
 re: fclean all
