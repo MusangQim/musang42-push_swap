@@ -6,7 +6,7 @@
 #    By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/23 00:15:04 by adzmusta          #+#    #+#              #
-#    Updated: 2026/03/03 11:14:49 by adzmusta         ###   ########.fr        #
+#    Updated: 2026/03/03 22:39:23 by adzmusta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,7 @@ LIBFT = $(LIBFT_DIR)/libft.a
 PRINTF_DIR = ft_printf
 PRINTF = $(PRINTF_DIR)/libftprintf.a
 
-all = $(NAME)
+all : $(NAME)
 
 $(NAME): $(OBJS)
 	@make -C $(LIBFT_DIR)
