@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/02/27 23:20:29 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/03 22:39:55 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	check_invalidchar(char *str)
 	{
 		if (!ft_isdigit(str[j]))
 		{
-			ft_putstr("Error\n");
+			write (2, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -41,7 +41,7 @@ static void	check_sign(char *str)
 	{
 		if (str[j] == '+' || str[j] == '-')
 		{
-			ft_putstr("Error\n");
+			write (2, "Error\n", 6);
 			exit(1);
 		}
 		j++;
@@ -87,7 +87,7 @@ static void	check_duplicate(t_node *stack)
 		{
 			if (current->value == runner->value)
 			{
-				ft_putstr("Error\n");
+				write (2, "Error\n", 6);
 				exit(1);
 			}
 			runner = runner->next;
