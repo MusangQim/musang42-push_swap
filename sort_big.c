@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 04:04:18 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/05 04:12:36 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,25 @@ int	cost_b(t_node *stack_b, int index)
 	pos = position_by_index(stack_b, index);
 	size = stack_size(stack_b);
 	if (pos <= size / 2)
-	       return (pos);	
+		return (pos);
 	else
 		return (size - pos);
 }
 
-int	find_cheapest(t_node *stack_b)
+int	find_cheapest(t_node *stack_b, t_node *stack_a)
 {
 	t_node		*current;
 	int			min_cost;
 	int			total_cost;
+	int			cheapest;
 
 	current = stack_b;
 	min_cost = INT_MAX;
+	cheapest = 0;
 	while (current != NULL)
 	{
-		total_cost = cost_b(stack_b, index) + cost_a(stack_a, index);
+		total_cost = cost_b(stack_b, current->index)
+			+ cost_a(stack_a, current->index);
 		if (total_cost < min_cost)
 		{
 			min_cost = total_cost;
@@ -76,7 +79,6 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 		chunk_size = chunk_size / 5;
 	else
 		chunk_size = chunk_size / 17;
-
 	currentlimit = chunk_size;
 	while (*stack_a != NULL)
 	{
@@ -93,7 +95,7 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 		else
 		{
 			if ((*stack_b) != NULL)
-					rotate_r(stack_a, stack_b);
+				rotate_r(stack_a, stack_b);
 			else
 				rotate_a(stack_a);
 		}
