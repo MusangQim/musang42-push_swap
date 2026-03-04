@@ -6,12 +6,60 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 02:23:02 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/05 04:04:18 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	cost_a(t_node *stack_a, int index)
+{
+	int	pos;
+	int	size;
+
+	pos = position_by_index(stack_a, index);
+	size = stack_size(stack_a);
+	if (pos <= size / 2)
+		return (pos);
+	else
+		return (size - pos);
+}
+
+int	cost_b(t_node *stack_b, int index)
+{
+	int	pos;
+	int	size;
+
+	pos = position_by_index(stack_b, index);
+	size = stack_size(stack_b);
+	if (pos <= size / 2)
+	       return (pos);	
+	else
+		return (size - pos);
+}
+
+int	find_cheapest(t_node *stack_b)
+{
+	t_node		*current;
+	int			min_cost;
+	int			total_cost;
+
+	current = stack_b;
+	min_cost = INT_MAX;
+	while (current != NULL)
+	{
+		total_cost = cost_b(stack_b, index) + cost_a(stack_a, index);
+		if (total_cost < min_cost)
+		{
+			min_cost = total_cost;
+			cheapest = current->index;
+		}
+		current = current->next;
+	}
+	return (cheapest);
+}
+
+/* push all stack A to stack B */
 void	push_chunks(t_node **stack_a, t_node **stack_b)
 {
 	int	push_in;
@@ -25,7 +73,7 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 	else if (chunk_size <= 100)
 		chunk_size = chunk_size / 7;
 	else if (chunk_size <= 500)
-		chunk_size = chunk_size / 11;
+		chunk_size = chunk_size / 5;
 	else
 		chunk_size = chunk_size / 17;
 
@@ -52,24 +100,7 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-int	find_max_index(t_node *stack)
-{
-	t_node		*current;
-	int			max_index;
-
-	if (!stack)
-		return (0);
-	max_index = stack->index;
-	current = stack;
-	while (current)
-	{
-		if (current->index > max_index)
-			max_index = current->index;
-		current = current->next;
-	}
-	return (max_index);
-}
-
+/* use greedy to fix operation for efficieny */
 void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 {
 	int	pos;
