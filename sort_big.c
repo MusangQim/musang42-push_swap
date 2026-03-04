@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 02:14:08 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/05 02:23:02 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 			push_in++;
 		}
 		else
-			rotate_r(stack_a, stack_b);
+		{
+			if ((*stack_b) != NULL)
+					rotate_r(stack_a, stack_b);
+			else
+				rotate_a(stack_a);
+		}
 	}
 }
 
