@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:13:00 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 09:19:33 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/05 09:38:46 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	cost_a(t_node *stack_a, int index)
 {
 	int	pos;
-	itn	size;
+	int	size;
 
 	pos = position_by_index(stack_a, index);
 	size = stack_size(stack_a);
