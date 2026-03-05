@@ -6,7 +6,7 @@
 #    By: adzmusta <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/23 00:15:04 by adzmusta          #+#    #+#              #
-#    Updated: 2026/03/03 22:39:23 by adzmusta         ###   ########.fr        #
+#    Updated: 2026/03/05 09:43:19 by adzmusta         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS = main.c \
        index.c \
        sort_small.c \
        sort_big.c \
+       sort_big_utils.c\
        push.c \
        swap.c \
        rotate.c \
