@@ -6,13 +6,13 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/03 22:39:55 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 16:18:52 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	check_invalidchar(char *str)
+static void	check_invalidchar(char *str, t_node **stack_a)
 {
 	int	j;
 
@@ -23,14 +23,13 @@ static void	check_invalidchar(char *str)
 	{
 		if (!ft_isdigit(str[j]))
 		{
-			write (2, "Error\n", 6);
-			exit(1);
+			error_exit(stack_a);
 		}
 		j++;
 	}
 }
 
-static void	check_sign(char *str)
+static void	check_sign(char *str, t_node **stack_a)
 {
 	int	j;
 
@@ -41,8 +40,7 @@ static void	check_sign(char *str)
 	{
 		if (str[j] == '+' || str[j] == '-')
 		{
-			write (2, "Error\n", 6);
-			exit(1);
+			error_exit(stack_a);
 		}
 		j++;
 	}
@@ -74,12 +72,12 @@ static int	check_overflow(char *str)
 	return ((int)(num * sign));
 }
 
-static void	check_duplicate(t_node *stack)
+static void	check_duplicate(t_node **stack_a)
 {
 	t_node	*current;
 	t_node	*runner;
 
-	current = stack;
+	current = *stack_a;
 	while (current != NULL)
 	{
 		runner = current->next;
@@ -87,8 +85,7 @@ static void	check_duplicate(t_node *stack)
 		{
 			if (current->value == runner->value)
 			{
-				write (2, "Error\n", 6);
-				exit(1);
+				error_exit(stack_a);
 			}
 			runner = runner->next;
 		}
@@ -104,12 +101,12 @@ void	check_errors(char **argv, t_node **stack_a)
 	i = 0;
 	while (argv[i])
 	{
-		check_invalidchar(argv[i]);
-		check_sign(argv[i]);
+		check_invalidchar(argv[i], stack_a);
+		check_sign(argv[i], stack_a);
 		check_overflow(argv[i]);
 		value = ft_atoi(argv[i]);
 		stack_push(stack_a, create_node(value));
 		i++;
 	}
-	check_duplicate(*stack_a);
+	check_duplicate(stack_a);
 }
