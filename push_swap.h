@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 09:30:52 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:31:30 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,13 @@ void	sort_big(t_node **stack_a, t_node **stack_b);
 int		cost_a(t_node *stack_a, int index);
 int		cost_b(t_node *stack_b, int index);
 int		find_cheapest(t_node *stack_b, t_node *stack_a);
+int		find_target(t_node *stack_a, int value);
+int		get_value_index(t_node *stack, int index);
+
+/* SORT BIG UTILS_2 */
+void	shift_stacks(t_node **stack_a);
+void	rotate_top_b(t_node **stack_b, int cheapest);
+void	rotate_pos_a(t_node **stack_a, int target_pos);
 
 /* UTILS */
 void	free_stack(t_node **stack);
