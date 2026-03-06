@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:13:00 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/05 09:38:46 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 13:06:34 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,28 @@ int	find_cheapest(t_node *stack_b, t_node *stack_a)
 		current = current->next;
 	}
 	return (cheapest);
+}
+
+int	find_target(t_node *stack_a, int value)
+{
+	t_node		*current;
+	int			pos;
+	int			best_value;
+	int			target_pos;
+
+	current = stack_a;
+	pos = 0;
+	target_pos = 0;
+	best_value = INT_MAX;
+	while (current)
+	{
+		if (current->value > value && current->value < best_value)
+		{
+			best_value = current->value;
+			target_pos = pos;
+		}
+		current = current->next;
+		pos++;
+	}
+	return (target_pos);
 }
