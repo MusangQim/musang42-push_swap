@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 20:32:12 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/06 12:48:42 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:28:18 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,39 +52,20 @@ void	push_chunks(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-static void	shift_stacks(t_node **stack_a)
-{
-	int	low_pos;
-	int	size;
-
-	low_pos = position(*stack_a, min(*stack_a));
-	size = stack_size(*stack_a);
-	if (low_pos <= size / 2)
-		while ((*stack_a)->value != min(*stack_a))
-			rotate_a(stack_a);
-	else
-		while ((*stack_a)->value != min(*stack_a))
-			revrotate_a(stack_a);
-}
-
 /* use greedy to fix operation for efficieny */
 void	rebuild_stack(t_node **stack_a, t_node **stack_b)
 {
-	int	pos;
-	int	size;
+	int	value;
 	int	cheapest;
+	int	target_pos;
 
 	while (*stack_b != NULL)
 	{
 		cheapest = find_cheapest(*stack_b, *stack_a);
-		pos = position_by_index(*stack_b, cheapest);
-		size = stack_size(*stack_b);
-		if (pos <= size / 2)
-			while ((*stack_b)->index != cheapest)
-				rotate_b(stack_b);
-		else
-			while ((*stack_b)->index != cheapest)
-				revrotate_b(stack_b);
+		value = get_value_index(*stack_b, cheapest);
+		target_pos = find_target(*stack_a, value);
+		rotate_top_b(stack_b, cheapest);
+		rotate_pos_a(stack_a, target_pos);
 		push_a(stack_a, stack_b);
 	}
 }
