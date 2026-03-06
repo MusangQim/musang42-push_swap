@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:13:00 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/06 13:12:19 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 15:06:32 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ int	find_target(t_node *stack_a, int value)
 		current = current->next;
 		pos++;
 	}
+	if (best_value == INT_MAX)
+		target_pos = position(*stack_a, min(*stack_a, min(*stack_a));
 	return (target_pos);
 }
 
