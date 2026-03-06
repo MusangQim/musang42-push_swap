@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/05 09:13:00 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/06 13:06:34 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/06 13:12:19 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,15 @@ int	find_target(t_node *stack_a, int value)
 		pos++;
 	}
 	return (target_pos);
+}
+
+int	get_value_index(t_node *stack, int index)
+{
+	while (stack)
+	{
+		if (stack->index == index)
+			return (stack->value);
+		stack = stack->next;
+	}
+	return (0);
 }
