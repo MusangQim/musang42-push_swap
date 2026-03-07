@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/06 16:18:52 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/07 18:50:49 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@ static void	check_invalidchar(char *str, t_node **stack_a)
 	j = 0;
 	if (str[j] == '+' || str[j] == '-')
 		j++;
+	if (str[j] == '\0')
+	{
+		write (2, "Error\n", 6);
+		exit(1);
+	}
 	while (str[j] != '\0')
 	{
 		if (!ft_isdigit(str[j]))
@@ -51,11 +56,10 @@ static int	check_overflow(char *str)
 	long	num;
 	int		i;
 	int		sign;
-	int		digit;
 
 	i = 0;
 	num = 0;
-	sign = +1;
+	sign = 1;
 	if (str[i] == '+')
 		i++;
 	else if (str[i] == '-')
@@ -63,10 +67,14 @@ static int	check_overflow(char *str)
 		sign = -1;
 		i++;
 	}
+	if (ft_strlen(str + i) > (size_t)10)
+	{
+		write (2, "Error\n", 6);
+		exit(1);
+	}
 	while (str[i])
 	{
-		digit = str[i] - '0';
-		num = help_overflow(num, digit, sign);
+		num = help_overflow(num, str[i] - '0', sign);
 		i++;
 	}
 	return ((int)(num * sign));
@@ -101,6 +109,11 @@ void	check_errors(char **argv, t_node **stack_a)
 	i = 0;
 	while (argv[i])
 	{
+		if (argv[i][0] == '\0')
+		{
+			write (2, "Error\n", 6);
+			exit(1);
+		}
 		check_invalidchar(argv[i], stack_a);
 		check_sign(argv[i], stack_a);
 		check_overflow(argv[i]);
