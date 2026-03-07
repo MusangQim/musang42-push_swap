@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 21:24:52 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/06 14:31:30 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/07 18:52:31 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	parse_args(int argc, char **argv, t_node **stack_a);
 void	check_errors(char **argv, t_node **stack_a);
 
 /* ERROR UTILS */
-int		help_overflow(long num, int digit, int sign);
+long		help_overflow(long num, int digit, int sign);
 void	error_exit(t_node **stack);
 
 /* INDEX */
