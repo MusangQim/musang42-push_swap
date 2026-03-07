@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/31 20:17:37 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/07 18:50:49 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/07 18:53:13 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,8 +116,7 @@ void	check_errors(char **argv, t_node **stack_a)
 		}
 		check_invalidchar(argv[i], stack_a);
 		check_sign(argv[i], stack_a);
-		check_overflow(argv[i]);
-		value = ft_atoi(argv[i]);
+		value = check_overflow(argv[i]);
 		stack_push(stack_a, create_node(value));
 		i++;
 	}
