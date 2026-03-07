@@ -6,7 +6,7 @@
 /*   By: adzmusta <adzmusta@student.42iskandarpute  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 18:16:29 by adzmusta          #+#    #+#             */
-/*   Updated: 2026/03/07 18:59:28 by adzmusta         ###   ########.fr       */
+/*   Updated: 2026/03/07 19:01:04 by adzmusta         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	parse_args(int argc, char **argv, t_node **stack_a)
 
 	if (argc == 2)
 	{
-		if (argc[1][0] == '\0')
+		if (argv[1][0] == '\0')
 		{
 			write (2, "Error\n", 6);
 			exit(1);
